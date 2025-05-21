@@ -1,35 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class UICondition : MonoBehaviour
 {
-    public UICondition uiCcondition;
-    
-    Condition health { get { return uiCcondition.health; } }
-    Condition stamina { get { return uiCcondition.stamina; } }
-    
-    public event Action OnTakeDamage;
+    public Condition health;
+    public Condition stemina;
 
-    private void Update()
+    private void Start()
     {
-        stamina.Add(stamina.passiveValue * Time.deltaTime);
-
-        if (health.curValue < 0f)
-        {
-            Die();
-        }
-    }
-
-    public void Heal(float amount)
-    {
-        health.Add(amount);
-    }
-
-    private void Die()
-    {
-        Debug.Log("플레이어가 죽었다!");
+        CharterManager.Instance.Player.Condition.uiCcondition = this;
     }
 }
