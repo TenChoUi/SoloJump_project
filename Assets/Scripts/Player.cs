@@ -6,10 +6,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerController Controller;
+    public PlayerCondition Condition;
 
     private void Awake()
     {
         CharterManager.Instance.Player = this;
         Controller = GetComponent<PlayerController>();
+        Condition = GetComponent<PlayerCondition>();
     }
 }
+
