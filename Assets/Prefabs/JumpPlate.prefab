@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spring: {fileID: 2073077932796347538}
-  jumpForce: 500
+  jumpForce: 200
